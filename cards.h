@@ -27,13 +27,34 @@ private:
 	rank_t rank;	
 
 
-
-
-
-
-
-
-
 };
 
+class Hand{
+public:
+	Hand();
+	void draw();
+	string get_cards();
 
+private:
+	vector<int> cards;
+}
+
+class Player{
+public:
+	Player();
+	
+	void update_money(int money);
+	
+	int print_amount() const;
+	
+	void write_log() const;
+
+
+	
+private:
+	int money;
+	
+}
+
+
+#endif
