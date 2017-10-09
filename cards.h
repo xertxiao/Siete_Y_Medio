@@ -5,6 +5,8 @@
 #ifndef CARDS_H_
 #define CARDS_H_
 
+using namespace std;
+
 enum suit_t {OROS, COPAS, ESPADAS, BASTOS};
 
 enum rank_t {AS, DOS, TRES, CUATRO, CINCO, SEIS, SIETE, SOTA = 9, CABALLO = 10, REY = 11};
@@ -33,11 +35,11 @@ class Hand{
 public:
 	Hand();
 	void draw();
-	string get_cards();
-
+	string get_cards() const;
+	int total_rank() const;
 private:
-	vector<int> cards;
-}
+	vector<Card> cards;
+};
 
 class Player{
 public:
@@ -54,7 +56,7 @@ public:
 private:
 	int money;
 	string name;	
-}
+};
 
 
 #endif
