@@ -33,7 +33,7 @@ private:
 
 class Hand{
 public:
-	Hand();
+	Hand() ;
 	void draw();
 	string get_cards() const;
 	int total_rank() const;
