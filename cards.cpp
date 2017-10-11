@@ -181,12 +181,18 @@ bool Card::operator < (Card card2) const {
    ************************************************* */
 // Implemente the member functions of the Hand class here.
 
+
+
 void Hand::draw(){
+	new_card = new Card card;
+	cards.push_back(new_card);
+		cout << "Your Cards:\n\t" << new_card -> get_spanish_rank() << " de " << new_card -> get_spanish_suit() << "\t" << "(" << get_english_rank() << " Of " 
+			<< get_english_suit() << ")\n";		
+	} 
 
 }
 
-/* *************************************************
-   Player class
+/* *************************************************  Player class
    ************************************************* */
 // Implemente the member functions of the Player class here.
 

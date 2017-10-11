@@ -37,8 +37,9 @@ public:
 	void draw();
 	string get_cards() const;
 	int total_rank() const;
+	~Hand() {for (auto i : cards){delete i;}}
 private:
-	vector<Card> cards;
+	vector<Card* > cards;
 };
 
 class Player{
@@ -49,7 +50,7 @@ public:
 	
 	int print_amount() const;
 	
-	void write_log() const;
+//	void write_log() const;
 
 
 	
