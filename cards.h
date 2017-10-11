@@ -45,7 +45,7 @@ private:
 
 class Player{
 public:
-	Player(): money = 100 {} ;
+	Player(): money(100), hand() {} ;
 	void update_money(int input_money);
 	
 	int get_amount() const;
@@ -56,6 +56,7 @@ public:
 	
 private:
 	int money;
+	Hand hand;
 };
 
 
