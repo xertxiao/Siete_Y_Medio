@@ -37,6 +37,7 @@ public:
 	void draw();
 	string get_cards() const;
 	int total_rank() const;
+	int total_cards() const;
 	~Hand() {for (auto i : cards){delete i;}}
 private:
 	vector<Card* > cards;
