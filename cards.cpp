@@ -198,7 +198,7 @@ int Hand::total_rank() const {
 int Hand::total_cards() const{
 	return cards.size();
 }
-string Hand::get_cards(){
+string Hand::get_cards() const{
 	string have_cards = "";
 	for (auto x : cards){
 		have_cards += cards[x] -> get_spanish_rank() + " de " + cards[x] -> get_spanish_suit() + "\t" + "(" + cards[x] -> get_english_rank() + " of " +  cards[x] -> get_english_suit() + ".\t";
@@ -210,3 +210,12 @@ string Hand::get_cards(){
    ************************************************* */
 // Implemente the member functions of the Player class here.
 
+
+void Player::update_money(int input_money){
+	money += input_money;
+}
+
+
+int Player::get_amount() const{
+	return money;
+}

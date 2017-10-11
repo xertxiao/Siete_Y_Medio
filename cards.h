@@ -45,11 +45,10 @@ private:
 
 class Player{
 public:
-	Player();
-	Player(string input_name): name(input_name), money(100) {}
-	void update_money(int money);
+	Player(): money = 100 {} ;
+	void update_money(int input_money);
 	
-	int print_amount() const;
+	int get_amount() const;
 	
 //	void write_log() const;
 
@@ -57,7 +56,6 @@ public:
 	
 private:
 	int money;
-	string name;	
 };
 
 
