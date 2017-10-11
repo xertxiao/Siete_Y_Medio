@@ -195,7 +195,6 @@ int Hand::total_rank() const {
 	return sum;
 }
 
-
 /* *************************************************  Player class
    ************************************************* */
 // Implemente the member functions of the Player class here.
