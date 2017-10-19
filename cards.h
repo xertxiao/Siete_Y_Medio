@@ -33,7 +33,7 @@ private:
 
 class Hand{
 public:
-	Hand() ;
+	Hand(){};
 	void draw();
 	string get_cards() const;
 	int total_rank() const;
@@ -45,9 +45,10 @@ private:
 
 class Player{
 public:
-	Player(): money(100), hand() {} ;
+	Player(): money(100){}
 	void update_money(int input_money);
-	
+	void draw() {hand->draw();};	
+	string show_cards() const {return hand->get_cards();};
 	int get_amount() const;
 	
 //	void write_log() const;
@@ -56,7 +57,7 @@ public:
 	
 private:
 	int money;
-	Hand hand;
+	Hand* hand;
 };
 
 

@@ -182,8 +182,8 @@ bool Card::operator < (Card card2) const {
 // Implemente the member functions of the Hand class here.
 
 void Hand::draw(){
-	new_card = new Card one_card;
-	cards.append(one_card);
+	Card* new_card = new Card();
+	cards.push_back(new_card);
 }
 
 int Hand::total_rank() const {
@@ -201,7 +201,7 @@ int Hand::total_cards() const{
 string Hand::get_cards() const{
 	string have_cards = "";
 	for (auto x : cards){
-		have_cards += cards[x] -> get_spanish_rank() + " de " + cards[x] -> get_spanish_suit() + "\t" + "(" + cards[x] -> get_english_rank() + " of " +  cards[x] -> get_english_suit() + ".\t";
+		have_cards += x -> get_spanish_rank() + " de " + x -> get_spanish_suit() + "\t" + "(" + x -> get_english_rank() + " of " +  x -> get_english_suit() + ".\t";
 	}
 	return have_cards;
 }
