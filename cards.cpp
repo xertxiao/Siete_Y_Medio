@@ -201,9 +201,16 @@ int Hand::total_cards() const{
 string Hand::get_cards() const{
 	string have_cards = "";
 	for (auto x : cards){
-		have_cards += x -> get_spanish_rank() + " de " + x -> get_spanish_suit() + "\t" + "(" + x -> get_english_rank() + " of " +  x -> get_english_suit() + ".\t";
+		have_cards += x -> get_spanish_rank() + " de " + x -> get_spanish_suit() + "\t" + "(" + x -> get_english_rank() + " of " +  x -> get_english_suit() + ")\t";
 	}
 	return have_cards;
+
+}
+
+string Hand::get_lastcard() const{
+    string to_return = cards.back() -> get_spanish_rank() + " de " + cards.back() -> get_spanish_suit() + "\t" + "(" +
+            cards.back() -> get_english_rank() + " of " +  cards.back() -> get_english_suit() + ")\t";
+    return to_return;
 }
 
 /* *************************************************  Player class
@@ -218,4 +225,12 @@ void Player::update_money(int input_money){
 
 int Player::get_amount() const{
 	return money;
+}
+
+int Player::get_totalrank() const{
+	int rank = hand->total_rank();
+/*	while (rank > 7.5){
+		rank -= 7;
+	}*/
+	return rank;
 }

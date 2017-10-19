@@ -36,6 +36,7 @@ public:
 	Hand(){};
 	void draw();
 	string get_cards() const;
+	string get_lastcard() const;
 	int total_rank() const;
 	int total_cards() const;
 	~Hand() {for (auto i : cards){delete i;}}
@@ -45,12 +46,13 @@ private:
 
 class Player{
 public:
-	Player(): money(100){}
+	Player(): money(100){hand = new Hand()}
 	void update_money(int input_money);
 	void draw() {hand->draw();};	
+	int get_totalrank() const;
 	string show_cards() const {return hand->get_cards();};
 	int get_amount() const;
-	
+	~Player() {hand->delete hand;}
 //	void write_log() const;
 
 
