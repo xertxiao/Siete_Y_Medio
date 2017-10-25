@@ -159,7 +159,44 @@ string Card::get_english_rank() const {
 } 
    
 
+int Card::get_value() const{
+   int toreturn = 0;
+   switch (rank) {
+      case AS:
+         toreturn = 1; 
+	 break; 
+      case DOS: 
+	 toreturn = 2;
+	 break; 
+      case TRES: 
+         toreturn = 3; 
+	 break; 
+      case CUATRO: 
+         toreturn = 4; 
+	 break; 
+      case CINCO: 
+         toreturn = 5; 
+	 break; 
+      case SEIS: 
+         toreturn = 6; 
+	 break; 
+      case SIETE: 
+         toreturn = 7; 
+	 break; 
+      case SOTA: 
+         toreturn = 0.5; 
+	 break; 
+      case CABALLO: 
+         toreturn = 0.5; 
+	 break; 
+      case REY: 
+         toreturn = 0.5; 
+	 break; 
+      default: break;
+   }
+   return toreturn;
 
+}
 
 
 // Assigns a numerical value to card based on rank.
@@ -213,6 +250,13 @@ string Hand::get_lastcard() const{
     return to_return;
 }
 
+int Hand::get_hand_value() const{
+	int sum = 0;
+	for (auto i : cards){
+		sum += i -> get_value();
+	}
+	
+}
 /* *************************************************  Player class
    ************************************************* */
 // Implemente the member functions of the Player class here.
@@ -235,3 +279,6 @@ int Player::get_rank() const{
 	return rank;
 }
 
+int Player::get_player_value() const{
+	return hand -> get_hand_value();
+}
