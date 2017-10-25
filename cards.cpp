@@ -159,8 +159,8 @@ string Card::get_english_rank() const {
 } 
    
 
-int Card::get_value() const{
-   int toreturn = 0;
+double Card::get_value() const{
+   double toreturn = 0;
    switch (rank) {
       case AS:
          toreturn = 1; 
@@ -250,12 +250,12 @@ string Hand::get_lastcard() const{
     return to_return;
 }
 
-int Hand::get_hand_value() const{
-	int sum = 0;
+double Hand::get_hand_value() const{
+	double sum = 0;
 	for (auto i : cards){
 		sum += i -> get_value();
 	}
-	
+   return sum;	
 }
 /* *************************************************  Player class
    ************************************************* */
@@ -279,6 +279,6 @@ int Player::get_rank() const{
 	return rank;
 }
 
-int Player::get_player_value() const{
+double Player::get_player_value() const{
 	return hand -> get_hand_value();
 }

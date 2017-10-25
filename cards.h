@@ -20,7 +20,7 @@ public:
 	string get_english_suit() const;
 	string get_english_rank() const;
 
-	int get_value() const;
+	double get_value() const;
 	int get_rank() const;
 
 	bool operator < (Card card2) const;
@@ -40,7 +40,7 @@ public:
 	string get_lastcard() const;
 	int total_rank() const;
 	int total_cards() const;
-	int get_hand_value() const;
+	double get_hand_value() const;
 	~Hand() {for (auto i : cards){delete i;}}
 private:
 	vector<Card* > cards;
@@ -57,7 +57,7 @@ public:
 	int get_amount() const;
 	~Player() {delete hand;}
 	int get_rank() const;
-	int get_player_value() const;
+	double get_player_value() const;
 //	void write_log() const;
 
 
