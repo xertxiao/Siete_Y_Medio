@@ -8,6 +8,7 @@
 using namespace std;
 
 int main(){
+
     Player* me = new Player();
     Player* computer = new Player();
     int input_amount = 0;

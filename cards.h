@@ -46,13 +46,15 @@ private:
 
 class Player{
 public:
-	Player(): money(100){hand = new Hand()}
+	Player(): money(100) {hand = new Hand();}
 	void update_money(int input_money);
-	void draw() {hand->draw();};	
+	void draw() {hand->draw();}
+	string show_last_card() const {return hand->get_lastcard();}
 	int get_totalrank() const;
 	string show_cards() const {return hand->get_cards();};
 	int get_amount() const;
-	~Player() {hand->delete hand;}
+	~Player() {delete hand;}
+	int get_rank() const;
 //	void write_log() const;
 
 

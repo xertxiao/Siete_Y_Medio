@@ -227,10 +227,11 @@ int Player::get_amount() const{
 	return money;
 }
 
-int Player::get_totalrank() const{
+int Player::get_rank() const{
 	int rank = hand->total_rank();
 /*	while (rank > 7.5){
 		rank -= 7;
 	}*/
 	return rank;
 }
+
