@@ -58,6 +58,7 @@ public:
 	~Player() {delete hand;}
 	int get_rank() const;
 	double get_player_value() const;
+	void clear_hand() {delete hand; hand = new Hand();}
 //	void write_log() const;
 
 

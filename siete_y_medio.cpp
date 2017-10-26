@@ -17,7 +17,10 @@ int main(){
     char answer;
     
     while (0 < me->get_amount() && computer->get_amount() >= -800){
-     
+	me->clear_hand();
+	computer->clear_hand();	
+	burst_flag_player = burst_flag_computer = false;
+	 
     	cout << "You have $" << me->get_amount() << ". Enter bet: ";
 	cin >> input_amount;	
     	while(input_amount > me->get_amount() || input_amount == 0){
@@ -65,6 +68,7 @@ int main(){
         else if (burst_flag_player == false && burst_flag_computer == true){
             cout << "You Win " << input_amount << endl;
             me -> update_money(input_amount);
+	    computer -> update_money(-(input_amount));
         }
         else if (burst_flag_player == false && burst_flag_computer == false){
             if (me->get_player_value() < computer->get_player_value()){
@@ -74,6 +78,7 @@ int main(){
             else if (me->get_player_value() > computer->get_player_value()){
                 cout << "You Win " << input_amount << endl;
                 me -> update_money(input_amount);
+		computer -> update_money(-(input_amount));
             }
             else{
                 cout << "Nobody wins!" << endl;
