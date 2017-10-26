@@ -11,3 +11,7 @@ Cards from ace to 7 are worth as many points as their numeric value, with the ac
 Test Case:
 	1. If a player input more bet thant he/she has, ask for reentering the number
 	2. If a plyaer input 0, ask for reentering the number
+	3. if a player lost all his money, game quits
+	4. If computer losses more than 900, quits
+	5. Cases for both player and computer burst, or either one of them bursts (computer wins if both burst, player bursts then computer wins, computer bursts then player wins)
+	
