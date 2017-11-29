@@ -19,3 +19,4 @@ Test Case:
 Extra:
 
 	Removed DS_store, not sure what it is	
+	Test non fast-merge
