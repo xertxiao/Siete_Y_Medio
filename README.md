@@ -15,3 +15,7 @@ Test Case:
 	4. If computer losses more than 900, quits
 	5. Cases for both player and computer burst, or either one of them bursts (computer wins if both burst, player bursts then computer wins, computer bursts then player wins)
 	
+
+Extra:
+
+	Removed DS_store, not sure what it is	
